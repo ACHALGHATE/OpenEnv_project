@@ -14,8 +14,7 @@ def root():
 
 @app.post("/reset")
 def reset(task: str = "email"):
-    obs = env.reset(task)
-    return obs.dict()
+    return env.reset(task)
 @app.post("/step")
 def step(action: dict):
     act = Action(**action)

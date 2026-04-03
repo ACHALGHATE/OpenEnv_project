@@ -1,12 +1,22 @@
-name: ai-work-assistant-env
-version: 2.0
+id: openenv-ai-assistant
+name: OpenEnv AI Assistant
+description: Multi-task environment for email, support, and scheduling workflows
+version: 1.0.0
 
-description: Multi-task real-world productivity simulation
+entry_point: env:WorkEnv
 
 tasks:
   - name: email
-    difficulty: easy
+    description: Email triage task
   - name: support
-    difficulty: medium
+    description: Customer support task
   - name: schedule
-    difficulty: hard
+    description: Meeting scheduling task
+
+observation_space:
+  type: object
+
+action_space:
+  type: object
+
+reward_range: [0.0, 1.0]
