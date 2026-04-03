@@ -1,0 +1,12 @@
+name: ai-work-assistant-env
+version: 2.0
+
+description: Multi-task real-world productivity simulation
+
+tasks:
+  - name: email
+    difficulty: easy
+  - name: support
+    difficulty: medium
+  - name: schedule
+    difficulty: hard
