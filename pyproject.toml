@@ -1,0 +1,15 @@
+[project]
+name = "openenv-ai-assistant"
+version = "1.0.0"
+description = "Multi-task OpenEnv environment for email, support, and scheduling"
+authors = [
+    {name = "Achal"}
+]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic"
+]
+
+[tool.openenv]
+env = "env:WorkEnv"
