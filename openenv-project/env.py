@@ -13,40 +13,32 @@ class WorkEnv:
         self.current_task = task
 
         # base state
-        self.state_data = {
-            "history": []
-        }
+        self.state_data = {}
+        self.state_data["history"] = []
 
         # -------- EMAIL TASK --------
         if task == "email":
-            self.state_data.update({
-                "emails": [
-                    {"id": 1, "text": "URGENT: client meeting", "priority": "high"},
-                    {"id": 2, "text": "Win iPhone now!!!", "priority": "low"},
-                    {"id": 3, "text": "Project update needed", "priority": "medium"}
-                ],
-                "processed": []
-            })
+            self.state_data["emails"] = [
+                {"id": 1, "text": "URGENT: client meeting", "priority": "high"},
+                {"id": 2, "text": "Win iPhone now!!!", "priority": "low"},
+                {"id": 3, "text": "Project update needed", "priority": "medium"}
+            ]
+            self.state_data["processed"] = []
 
         # -------- SUPPORT TASK --------
         elif task == "support":
-            self.state_data.update({
-                "tickets": [
-                    {"id": 1, "issue": "Product broken, want refund immediately"}
-                ],
-                "response": None
-            })
+            self.state_data["tickets"] = [
+                {"id": 1, "issue": "Product broken, want refund immediately"}
+            ]
 
         # -------- SCHEDULING TASK --------
         elif task == "schedule":
-            self.state_data.update({
-                "calendar": [
-                    {"time": "9AM"},
-                    {"time": "10AM"},
-                    {"time": "2PM"}
-                ],
-                "meeting_scheduled": False
-            })
+            self.state_data["calendar"] = [
+                {"time": "9AM"},
+                {"time": "10AM"},
+                {"time": "2PM"}
+            ]
+            self.state_data["meeting_scheduled"] = False
 
         return self._get_obs()
 
